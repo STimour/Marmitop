@@ -1,0 +1,106 @@
+
+
+*{
+  margin: 0;
+  padding: 0;
+  border-box: box-sizing;
+}
+
+main{
+  padding-top: 50px;
+}
+
+#input_form, .output_section{
+  border: 1px solid black;
+}
+
+label{
+  margin: 15px;
+}
+
+.btn{
+  padding: 15px;
+  border-radius: 5px;
+  margin: 30px 0;
+}
+
+.img{
+  width: 100%;
+  height: auto;
+}
+
+/*ANCHOR - text style */
+
+.header_text{
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+
+.text_center{
+  text-align: center;
+}
+
+/*ANCHOR - Flex */
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center
+}
+
+.flex-row{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column_center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/*ANCHOR - box position & size */
+.w-30{
+  width: 30%;
+}
+
+.w-40{
+  width: 40%;
+}
+
+.w-100{
+  width: 100wv;
+}
+
+.h-100{
+  height: 100vh;
+}
+
+.h-100pr{
+  height: 100%;
+}
+
+.w-900{
+  max-width: 900px;
+}
+
+.m-auto{
+  margin: auto;
+}
+
+.mt-30{
+  margin-top: 30px;
+}
+
+.m-50{
+  margin: 50px;
+}
+
+.p-30{
+  padding: 30px;
+}

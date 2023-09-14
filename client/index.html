@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+   <link rel="stylesheet" href="./src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marmitop</title>
+  </head>
+  <body>
+    <header class="m-auto p-30 w-100 header_text text_center">
+      <h1>Marmitop</h1>
+    </header>
+    <main id="app">
+      <section id="input_form" class="flex-column w-900 m-auto text_center">
+        <form class="m-50">
+          <section class="input-form_section flex-row">
+            <div class="input-form-section_item column_center m-50">
+              <label for="title">Titre</label>
+              <input type="text" id="title">
+            </div>
+            <div class="input-form-section_item column_center m-50">
+              <label for="image_link">Lien de l'image</label>
+              <input type="text" id="image_link">
+            </div>
+          </section>
+          <section class="input-form_section flex-row mt-30">
+            <div class="input-form-section_item column_center m-50">
+              <label for="time_duration">Durée</label>
+              <input type="text" id="time_duration">
+            </div>
+            <div class="input-form-section_item column_center m-50">
+              <label for="note">Note</label>
+              <input type="text" id="note">
+            </div>
+          </section>
+            <button class="w-30 btn">Ajouter</button>
+        </form>
+      </section>
+      <section id="output_section" class=" w-900 h-100 m-auto">
+       
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/app.ts"></script>
+  </body>
+</html>
