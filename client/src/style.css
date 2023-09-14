@@ -10,10 +10,6 @@ main{
   padding-top: 50px;
 }
 
-#input_form, .output_section{
-  border: 1px solid black;
-}
-
 label{
   margin: 15px;
 }
@@ -26,7 +22,6 @@ label{
 
 .img{
   width: 100%;
-  height: auto;
 }
 
 /*ANCHOR - text style */
@@ -64,7 +59,15 @@ label{
   flex-direction: column;
   justify-content: center;
 }
-/*ANCHOR - box position & size */
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*****************************ANCHOR - box**********************/
+
+/*ANCHOR - size */
 .w-30{
   width: 30%;
 }
@@ -89,6 +92,7 @@ label{
   max-width: 900px;
 }
 
+/*ANCHOR - margin, padding */
 .m-auto{
   margin: auto;
 }
@@ -103,4 +107,16 @@ label{
 
 .p-30{
   padding: 30px;
+}
+
+.p-10{
+  padding: 10px;
+}
+/*ANCHOR - style */
+.outline{
+  outline: thick double #BA55D3; 
+}
+
+.border{
+  border: 1px solid black;
 }

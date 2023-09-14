@@ -5,8 +5,20 @@ import cors from 'cors'
 import ViteExpress from "vite-express"
 import pg from "pg"
 
+
+
+
+
 configDotenv()
 const app = express()
+
+app.use(express.json())
+
+app.use(cors({
+        origin: 'http://localhost:5173',
+        methods: ['GET','POST']
+    }))
+
 
 const { Client } = pg
 const client = new Client({
@@ -16,7 +28,7 @@ const client = new Client({
     port: 5432,
     database: "marmitop"
 }) 
-app.use(cors())
+
 
 connect()
 async function connect(){
@@ -42,6 +54,23 @@ if(typeof portString === "string" && !isNaN(parseInt(portString))){
             console.log(e)
         }
     })
+
+    app.post("/ajouter-recette", async (req, res) => {
+        try {
+          const { titre, image_link, time_duration, note } = req.body;
+          
+          const resultat = await client.query(
+            "INSERT INTO recette (titre, image_link, time_duration, note) VALUES ($1, $2, $3, $4) RETURNING *",
+            [titre, image_link, time_duration, note]
+          );
+      
+          res.json(resultat.rows[0]);
+        } catch (e) {
+          console.error("Erreur lors de l'ajout de la recette :", e);
+          res.status(500).json({ error: "Erreur lors de l'ajout de la recette" });
+        }
+      });
+      
 
     app.listen(PORT, () => {
         console.log(`server est sur le port: ${PORT}`);
