@@ -20,6 +20,14 @@ label{
   margin: 30px 0;
 }
 
+.btnDelet{
+  background: #fd5c63;
+}
+
+.btnModif{
+  background: #BA55D3;
+}
+
 .img{
   width: 100%;
 }
