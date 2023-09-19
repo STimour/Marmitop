@@ -4,7 +4,7 @@ import dotenv, { configDotenv } from "dotenv"
 import cors from 'cors'
 import ViteExpress from "vite-express"
 import pg from "pg"
-import { log } from "console"
+
 
 
 const apiUrlGetPost = "/api/recettes"

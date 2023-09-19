@@ -71,43 +71,82 @@ async function fetchData() {
                         recetteTextDiv.remove()
                         
                         const input_form_sec_up = document.createElement("div") as HTMLDivElement
-                            input_form_sec_up.setAttribute("class", "flex-column w-900 m-auto text_center border")
-                    
+                          input_form_sec_up.setAttribute("class", "flex-row")
 
                         const input_form_sec_bottom = document.createElement("div") as HTMLDivElement
+                          input_form_sec_bottom.setAttribute("class", "flex-row")
+
+                        const input_form_div_up = document.createElement("div") as HTMLDivElement
+                          input_form_div_up.setAttribute("class", "input-form-section_item column_center m-50")
+
+                        const input_form_div_bottom = document.createElement("div") as HTMLDivElement
+                          input_form_div_bottom.setAttribute("class", "input-form-section_item column_center m-50")
 
                         const formulaireModif =  document.createElement("form") as HTMLFormElement
-                        formulaireModif.setAttribute("class", "m-50")
+                          formulaireModif.setAttribute("class", "m-50 text_center")
 
+                        const labelTitre = document.createElement("label") as HTMLLabelElement
+                          labelTitre.setAttribute("for", "titre")
+                          labelTitre.textContent = "Titre"
 
-                        
+                        const labelImage = document.createElement("label") as HTMLLabelElement
+                          labelImage.setAttribute("for", "image_link")
+                          labelImage.textContent = "Lien de l'image"
+
+                        const labelDuree = document.createElement("label") as HTMLLabelElement
+                          labelDuree.setAttribute("for", "time_duration")
+                          labelDuree.textContent = "Durée de préparation"
+
+                        const labelNote = document.createElement("label") as HTMLLabelElement
+                          labelNote.setAttribute("for", "note")
+                          labelNote.textContent = "Note"
+
                         recetteSection.appendChild(formulaireModif);
 
                         const titreInput = document.createElement("input") as HTMLInputElement
-                        titreInput.type = "text"
-                        
-                        titreInput.value = recette.titre
+                          titreInput.type = "text"
+                          titreInput.setAttribute("name", "titre")
+                          titreInput.setAttribute("class", "p-10")
+                          titreInput.value = recette.titre
 
                         const imageLinkInput = document.createElement("input") as HTMLInputElement
-                        imageLinkInput.type = "text";
-                        imageLinkInput.value = recette.image_link;
+                          imageLinkInput.type = "text";
+                          imageLinkInput.setAttribute("name", "image_link")
+                          imageLinkInput.setAttribute("class", "p-10")
+                          imageLinkInput.value = recette.image_link;
 
                         const durationInput = document.createElement("input") as HTMLInputElement
-                        durationInput.type = "text"
-                        durationInput.value = recette.time_duration
+                          durationInput.type = "text"
+                          durationInput.setAttribute("name", "time_duration")
+                          durationInput.setAttribute("class", "p-10")
+                          durationInput.value = recette.time_duration
 
-                        const noteInput = document.createElement("input") as HTMLInputElement
-                        noteInput.type = "text"
-                        noteInput.value = recette.note
+                        const noteInput = document.createElement("textarea") as HTMLTextAreaElement
+                          noteInput.setAttribute("name", "note")
+                          noteInput.setAttribute("class", "p-10")
+                          noteInput.value = recette.note
 
-                        formulaireModif.appendChild(titreInput)
-                        formulaireModif.appendChild(imageLinkInput)
-                        formulaireModif.appendChild(durationInput)
-                        formulaireModif.appendChild(noteInput)
+                        
+                        formulaireModif.appendChild(input_form_sec_up)
+                          input_form_sec_up.appendChild(input_form_div_up)
+                            input_form_div_up.appendChild(labelTitre)
+                            input_form_div_up.appendChild(titreInput)
+                          input_form_sec_up.appendChild(input_form_div_bottom)
+                            input_form_div_bottom.appendChild(labelImage)
+                            input_form_div_bottom.appendChild(imageLinkInput)
+
+                        formulaireModif.appendChild(input_form_sec_bottom)
+                          input_form_sec_bottom.appendChild(input_form_div_up)
+                            input_form_div_up.appendChild(labelDuree)
+                            input_form_div_up.appendChild(durationInput)
+                          input_form_sec_bottom.appendChild(input_form_div_bottom)
+                            input_form_div_bottom.appendChild(labelNote)
+                            input_form_div_bottom.appendChild(noteInput)
 
                         const submitBtn = document.createElement("button") as HTMLButtonElement;
-                        submitBtn.type = "submit";
-                        submitBtn.textContent = "Modifier";
+                          submitBtn.type = "submit";
+                          submitBtn.setAttribute("class", "w-30 btn")
+                          submitBtn.textContent = "Modifier";
                         formulaireModif.appendChild(submitBtn);
 
                         formulaireModif.addEventListener("submit", async (e) => {
