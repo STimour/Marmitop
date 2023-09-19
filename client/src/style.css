@@ -28,6 +28,9 @@ label{
 .btnModif{
   background: #BA55D3;
 }
+.btnEsc{
+  background: #FF4500;
+}
 
 .img{
   width: 100%;
